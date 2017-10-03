@@ -19,6 +19,7 @@ use GDO\DB\GDT_CreatedBy;
 use GDO\DB\GDT_EditedAt;
 use GDO\DB\GDT_EditedBy;
 use GDO\Template\GDT_Template;
+use GDO\DB\GDT_Join;
 final class WC_Site extends GDO
 {
     use WithTags;
@@ -55,8 +56,14 @@ final class WC_Site extends GDO
             
             GDT_CreatedAt::make('site_created_at'),
             GDT_CreatedBy::make('site_created_by'),
+            
+            GDT_Join::make('site_diff')->join("wc_sitediff ON sitediff_site = site_id"),
         );
     }
+    
+    public function getName() { return $this->getVar('site_name'); }
+    public function displayName() { return html($this->getName()); }
+    public function href_site_details() { return href('WeChall', 'Site', '&id='.$this->getID()); }
     
     public function renderList() { return GDT_Template::php('WeChall', 'list/site.php', ['field' => $this]); }
 

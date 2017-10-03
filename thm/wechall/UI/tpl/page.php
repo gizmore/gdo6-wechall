@@ -13,6 +13,8 @@ $page instanceof GDO\UI\GDT_Page;
     <? # Website::displayLink(); ?>
     <link href="GDO/Core/thm/default/css/gdo6.css" rel="stylesheet" />
     <link href="GDO/GWF/thm/classic/css/gdo6-classic.css" rel="stylesheet" />
+    <link href="GDO/GWFFontAwesome/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="robots" content="index, follow" />
