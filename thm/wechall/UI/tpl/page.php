@@ -18,13 +18,13 @@ $page instanceof GDO\UI\GDT_Page;
 	<meta name="robots" content="index, follow" />
   </head>
   <body>
-    <?= GDT_Template::php('WeChall', 'top_bar.php'); ?>
-    <?= GDT_Template::php('WeChall', 'top_menu.php'); ?>
+    <?= GDT_Template::php('WeChall', 'layout/top_bar.php'); ?>
+    <?= GDT_Template::php('WeChall', 'layout/top_menu.php'); ?>
 	<div class="gdo-body">
 	  <main><?= $page->html; ?></main>
-      <?= GDT_Template::php('WeChall', 'side_bar.php'); ?>
+      <?= GDT_Template::php('WeChall', 'layout/side_bar.php'); ?>
 	</div>
-    <?= GDT_Template::php('WeChall', 'bottom_bar.php'); ?>
+    <?= GDT_Template::php('WeChall', 'layout/bottom_bar.php'); ?>
     <?# Javascript::displayJavascripts(Module_GWF::instance()->cfgMinifyJS() === 'concat'); ?>
   </body>
 </html>
