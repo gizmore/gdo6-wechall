@@ -2,10 +2,17 @@
 namespace GDO\WeChall;
 use GDO\Core\GDO_Module;
 use GDO\User\GDT_Level;
-
+/**
+ * GDO6 port of the wechall.net website
+ * @author gizmore
+ * @version 6.0.1
+ */
 final class Module_WeChall extends GDO_Module
 {
     public $module_priority = 96;
+    public function getThemes() { return ['wechall']; }
+    public function onLoadLanguage() { $this->loadLanguage('lang/wechall'); }
+
     public function getConfig()
     {
         return array(

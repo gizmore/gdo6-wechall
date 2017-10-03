@@ -29,7 +29,7 @@ final class WC_TopMenu extends GDT_Bar
             $this->addField(GDT_Link::make('menu_profile')->href(href('WeChall', 'Profile')));
             $this->addField(GDT_Link::make('menu_pm')->href(href('PM', 'Overview')));
         }
-        $this->addField(GDT_Link::make('menu_downloads')->href(href('WeChall', 'Downloads')));
+        $this->addField(GDT_Link::make('menu_downloads')->href(href('Download', 'FileList')));
         if ($user->isAuthenticated())
         {
             $this->addField(GDT_Link::make('menu_usergroups')->href(href('Usergroups', 'Overview')));
