@@ -20,6 +20,7 @@ use GDO\DB\GDT_EditedAt;
 use GDO\DB\GDT_EditedBy;
 use GDO\Template\GDT_Template;
 use GDO\DB\GDT_Join;
+use GDO\UI\GDT_Color;
 final class WC_Site extends GDO
 {
     use WithTags;
@@ -33,6 +34,7 @@ final class WC_Site extends GDO
             WC_SiteName::make('site_name')->notNull()->label('name'),
             GDT_Name::make('site_classname')->notNull()->unique()->label('classname'),
             
+            GDT_Color::make('site_color')->notNull(),
             GDT_File::make('site_logo')->imageFile()->label('logo'),
         
             GDT_Country::make('site_country'),

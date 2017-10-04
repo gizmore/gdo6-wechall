@@ -2,10 +2,12 @@
 namespace GDO\WeChall;
 use GDO\Core\GDO_Module;
 use GDO\User\GDT_Level;
+use GDO\Template\GDT_Bar;
+use GDO\UI\GDT_Link;
 /**
  * GDO6 port of the wechall.net website
  * @author gizmore
- * @version 6.0.1
+ * @version 6.0.2
  */
 final class Module_WeChall extends GDO_Module
 {
@@ -31,5 +33,13 @@ final class Module_WeChall extends GDO_Module
             'GDO\\WeChall\\WC_SiteDiff',
             'GDO\\WeChall\\WC_SiteDiffVote',
         );
+    }
+    
+    #############
+    ### Hooks ###
+    #############
+    public function hookLeftBar(GDT_Bar $bar)
+    {
+        $bar->addField(GDT_Link::make('menu_sites')->href(href('WeChall', 'Sites')));
     }
 }
