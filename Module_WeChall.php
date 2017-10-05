@@ -32,6 +32,8 @@ final class Module_WeChall extends GDO_Module
             'GDO\\WeChall\\WC_SiteTag',
             'GDO\\WeChall\\WC_SiteDiff',
             'GDO\\WeChall\\WC_SiteDiffVote',
+            'GDO\\WeChall\\WC_SiteAdmin',
+            'GDO\\WeChall\\WC_RegAt',
         );
     }
     
@@ -41,5 +43,9 @@ final class Module_WeChall extends GDO_Module
     public function hookLeftBar(GDT_Bar $bar)
     {
         $bar->addField(GDT_Link::make('menu_sites')->href(href('WeChall', 'Sites')));
+    }
+    public function hookRightBar(GDT_Bar $bar)
+    {
+        $bar->addField(GDT_Link::make('menu_linked_sites')->href(href('WeChall', 'LinkedSites')));
     }
 }

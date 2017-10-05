@@ -21,11 +21,28 @@ use GDO\DB\GDT_EditedBy;
 use GDO\Template\GDT_Template;
 use GDO\DB\GDT_Join;
 use GDO\UI\GDT_Color;
+use GDO\Type\GDT_UInt;
+use GDO\Type\GDT_Decimal;
+use GDO\Type\GDT_Checkbox;
+use GDO\WeChall\GDT\WC_SiteLogo;
+use GDO\User\GDO_User;
+use GDO\Tag\GDT_Tags;
 final class WC_Site extends GDO
 {
+    ############
+    ### Tags ###
+    ############
     use WithTags;
     function gdoTagTable() { return WC_SiteTag::table(); }
 
+    ###############
+    ### Factory ###
+    ###############
+    public static function getWeChall() { return self::getById('1'); }
+    
+    ###########
+    ### GDO ###
+    ###########
     public function gdoColumns()
     {
         return array(
@@ -37,18 +54,28 @@ final class WC_Site extends GDO
             GDT_Color::make('site_color')->notNull(),
             GDT_File::make('site_logo')->imageFile()->label('logo'),
         
-            GDT_Country::make('site_country'),
+            GDT_Country::make('site_country')->emptyLabel(t('choose_site_country')),
             GDT_Language::make('site_language')->notNull()->initial('en'),
+            GDT_Tags::make('site_tags'),
             
             GDT_Date::make('site_launchdate'),
-            GDT_Date::make('site_joindate'),
+            GDT_Date::make('site_joindate')->editable(false),
             
+            GDT_Checkbox::make('site_autoupdate')->initial('0'),
             GDT_Secret::make('site_authkey')->max(32),
-            GDT_Secret::make('site_xauthkey')->max(32),
+//             GDT_Secret::make('site_xauthkey')->max(32)->initialRandom(),
             
+            GDT_UInt::make('site_maxscore')->editable(false),
+            GDT_UInt::make('site_challcount')->editable(false),
+            GDT_UInt::make('site_usercount')->editable(false),
+            GDT_UInt::make('site_linkcount')->editable(false),
+            
+            GDT_UInt::make('site_score')->initial('0')->editable(false), # calced score
+            GDT_UInt::make('site_basescore')->initial('10000'),
+            GDT_Decimal::make('site_avg')->digits(1, 4)->editable(false),
+            
+            GDT_Url::make('site_url')->reachable(),
             GDT_String::make('site_irc'),
-            
-            GDT_Url::make('site_url'),
             GDT_String::make('site_url_mail'),
             GDT_String::make('site_url_score'),
             GDT_String::make('site_url_profile'),
@@ -64,11 +91,32 @@ final class WC_Site extends GDO
     }
     
     public function getName() { return $this->getVar('site_name'); }
+    public function getURL() { return $this->getVar('site_url'); }
     public function displayName() { return html($this->getName()); }
-    public function href_site_details() { return href('WeChall', 'Site', '&id='.$this->getID()); }
-    
-    public function renderList() { return GDT_Template::php('WeChall', 'list/site.php', ['field' => $this]); }
+    public function displayLogo() { return WC_SiteLogo::make()->gdo($this)->renderCell(); }
+    public function getState() { return $this->getVar('site_status'); }
+    public function hasState(string $state) { return $this->getState() === $state; }
+    public function isUp() { return $this->hasState('up'); }
+    public function isSiteLinked(GDO_User $user) { return WC_RegAt::getFor($user, $this); }
+        
 
+    public function href_edit_site() { return href('WeChall', 'CRUDSite', '&id='.$this->getID()); }
+    public function href_site_details() { return href('WeChall', 'Site', '&id='.$this->getID()); }
+    public function href_site_admins() { return href('WeChall', 'SiteAdmins', '&id='.$this->getID()); }
+    public function href_site_descriptions() { return href('WeChall', 'SiteDescriptions', '&id='.$this->getID()); }
+    public function renderList() { return GDT_Template::php('WeChall', 'list/site.php', ['field' => $this]); }
+    public function renderChoice() { return GDT_Template::php('WeChall', 'cell/site_choice.php', ['site' => $this]); }
+    
+    public function canUpdate(GDO_User $user) { return $user->isStaff() || $this->isSiteAdmin($user); }
+
+    public function isSiteAdmin(GDO_User $user)
+    {
+        
+    }
+    
+    #############
+    ### Cache ###
+    #############
     public function all()
     {
         if (false === ($cache = Cache::get('wc_all_sites')))

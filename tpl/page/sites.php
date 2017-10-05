@@ -7,12 +7,14 @@ use GDO\Vote\GDT_VoteSelection;
 use GDO\WeChall\WC_SiteDiff;
 use GDO\Type\GDT_Decimal;
 use GDO\Template\GDT_Template;
+use GDO\UI\GDT_EditButton;
 
 $sites = WC_Site::table();
 
 $table = GDT_Table::make();
 $table->addFields(array(
     $sites->gdoColumn('site_id'),
+    GDT_EditButton::make('edit_site'),
     $sites->gdoColumn('site_country'),
     $sites->gdoColumn('site_name'),
     GDT_Template::make()->template('WeChall', 'cell/site_diff.php'),
