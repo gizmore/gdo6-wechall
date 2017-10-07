@@ -1,6 +1,6 @@
 <?php use GDO\User\GDT_Password; $field instanceof GDT_Password; ?>
 <div class="gdo-container<?= $field->classError(); ?>">
-  <?= $field->icon; ?>
+  <?= $field->htmlIcon(); ?>
   <label for="form[<?= $field->name; ?>]"><?= $field->label; ?></label>
   <input
    type="password"

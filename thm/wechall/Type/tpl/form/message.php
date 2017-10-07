@@ -1,7 +1,4 @@
-<?php
-use GDO\UI\GDT_Message;
-$field instanceof GDT_Message;
-?>
+<?php /** @var $field \GDO\UI\GDT_Message **/ ?>
 <div class="gdo-container<?= $field->classError(); ?>">
   <label for="form[<?= $field->name; ?>]"><?= $field->label; ?></label>
   <?= $field->htmlIcon(); ?>

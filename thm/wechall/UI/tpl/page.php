@@ -1,20 +1,14 @@
-<?php
+<?php /** @var $page \GDO\UI\GDT_Page **/
+use GDO\Core\GDT_Template;
+use GDO\Core\Module_Core;
 use GDO\Core\Website;
 use GDO\Util\Javascript;
-use GDO\UI\GDT_Bar;
-use GDO\GWF\Module_GWF;
-use GDO\Core\GDT_Template;
-$page instanceof GDO\UI\GDT_Page;
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <? # Website::displayMeta(); ?>
-    <? # Website::displayLink(); ?>
-    <link href="GDO/Core/thm/default/css/gdo6.css" rel="stylesheet" />
-    <link href="GDO/GWF/thm/classic/css/gdo6-classic.css" rel="stylesheet" />
-    <link href="GDO/GWFFontAwesome/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    
+    <?= Website::displayLink(); ?>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="robots" content="index, follow" />
@@ -23,10 +17,10 @@ $page instanceof GDO\UI\GDT_Page;
     <?= GDT_Template::php('WeChall', 'layout/top_bar.php'); ?>
     <?= GDT_Template::php('WeChall', 'layout/top_menu.php'); ?>
 	<div class="gdo-body">
-	  <main><?= $page->html; ?></main>
+	  <div class="gdo-main"><?= $page->html; ?></div>
       <?= GDT_Template::php('WeChall', 'layout/side_bar.php'); ?>
 	</div>
     <?= GDT_Template::php('WeChall', 'layout/bottom_bar.php'); ?>
-    <?# Javascript::displayJavascripts(Module_GWF::instance()->cfgMinifyJS() === 'concat'); ?>
+    <?= Javascript::displayJavascripts(Module_Core::instance()->cfgMinifyJS() === 'concat'); ?>
   </body>
 </html>

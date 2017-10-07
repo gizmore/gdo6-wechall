@@ -3,7 +3,7 @@ use GDO\DB\GDT_String;
 $field instanceof GDT_String;
 ?>
 <div class="gdo-container<?= $field->classError(); ?>">
-  <?= $field->icon; ?>
+  <?= $field->htmlIcon(); ?>
   <label for="form[<?= $field->name; ?>]"><?= $field->label; ?></label>
   <input
    type="text"
