@@ -56,7 +56,7 @@ final class WC_Update
         
         if (WECHALL_DEBUG_SCORING)
         {
-            var_dump(html($result));
+            echo (html($result));
         }
         
         $result = trim(str_replace("\xEF\xBB\xBF", '', $result));
