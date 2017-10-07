@@ -1,7 +1,7 @@
 <?php
 namespace GDO\WeChall;
 use GDO\Country\GDT_Country;
-use GDO\DB\GDO;
+use GDO\Core\GDO;
 use GDO\DB\GDT_AutoInc;
 use GDO\WeChall\GDT\WC_SiteStatus;
 use GDO\WeChall\GDT\WC_SiteName;

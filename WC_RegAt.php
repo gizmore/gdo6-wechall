@@ -1,6 +1,6 @@
 <?php
 namespace GDO\WeChall;
-use GDO\DB\GDO;
+use GDO\Core\GDO;
 use GDO\User\GDT_User;
 use GDO\DB\GDT_Object;
 use GDO\DB\GDT_CreatedAt;

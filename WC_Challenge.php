@@ -1,6 +1,6 @@
 <?php
 namespace GDO\WeChall;
-use GDO\DB\GDO;
+use GDO\Core\GDO;
 use GDO\DB\GDT_AutoInc;
 use GDO\Type\GDT_Name;
 use GDO\Type\GDT_Title;

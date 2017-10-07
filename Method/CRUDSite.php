@@ -1,6 +1,6 @@
 <?php
 namespace GDO\WeChall\Method;
-use GDO\DB\GDO;
+use GDO\Core\GDO;
 use GDO\Form\MethodCrud;
 use GDO\WeChall\WC_Site;
 use GDO\User\GDO_User;
