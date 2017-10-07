@@ -1,5 +1,5 @@
 <?php
-use GDO\Type\GDT_Message;
+use GDO\UI\GDT_Message;
 $field instanceof GDT_Message;
 ?>
 <div class="gdo-container<?= $field->classError(); ?>">

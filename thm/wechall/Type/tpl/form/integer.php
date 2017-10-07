@@ -1,4 +1,4 @@
-<?php use GDO\Type\GDT_Int; $field instanceof GDT_Int; ?>
+<?php use GDO\DB\GDT_Int; $field instanceof GDT_Int; ?>
 <div class="gdo-container<?= $field->classError(); ?>">
   <label for="form[<?= $field->name; ?>]"><?= $field->label; ?></label>
   <input

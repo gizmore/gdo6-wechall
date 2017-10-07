@@ -1,6 +1,6 @@
 <?php
 namespace GDO\WeChall\Method;
-use GDO\GWF\MethodPage;
+use GDO\UI\MethodPage;
 use GDO\Util\Common;
 use GDO\WeChall\WC_Site;
 use GDO\WeChall\WC_RegAt;
@@ -16,7 +16,7 @@ final class LinkedSites extends MethodPage
         return parent::execute();
     }
     
-    public function onUpdate(string $siteid)
+    public function onUpdate($siteid)
     {
         if (!($site = WC_Site::getById($siteid)))
         {

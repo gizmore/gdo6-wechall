@@ -5,7 +5,6 @@ use GDO\DB\GDT_Object;
 use GDO\Vote\WithVotes;
 use GDO\Vote\GDT_VoteCount;
 use GDO\Vote\GDT_VoteRating;
-use phpDocumentor\Reflection\Types\Self_;
 /**
  * Extra table for challenge difficulty outcome.
  * That's the way module votes works, so we can have multiple vote types per challenge; diff, edu, fun.

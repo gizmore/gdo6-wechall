@@ -1,5 +1,5 @@
 <?php
-use GDO\Template\GDT_Template;
+use GDO\Core\GDT_Template;
 use GDO\Vote\GDT_VoteSelection;
 use GDO\WeChall\WC_Site;
 use GDO\WeChall\WC_SiteDiff;

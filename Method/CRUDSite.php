@@ -4,9 +4,8 @@ use GDO\Core\GDO;
 use GDO\Form\MethodCrud;
 use GDO\WeChall\WC_Site;
 use GDO\User\GDO_User;
-use GDO\Template\Response;
 use function foo\func;
-use GDO\Template\GDT_Bar;
+use GDO\UI\GDT_Bar;
 use GDO\UI\GDT_Link;
 
 final class CRUDSite extends MethodCrud

@@ -3,7 +3,7 @@ namespace GDO\WeChall\Method;
 use GDO\Form\GDT_Form;
 use GDO\Form\MethodForm;
 use GDO\Mail\GDT_Email;
-use GDO\Type\GDT_String;
+use GDO\DB\GDT_String;
 use GDO\WeChall\GDT\WC_SiteSelect;
 use GDO\Form\GDT_Submit;
 use GDO\Form\GDT_AntiCSRF;
@@ -12,7 +12,7 @@ use GDO\WeChall\WC_Update;
 use GDO\WeChall\WC_RegAt;
 use GDO\Util\Common;
 use GDO\WeChall\WC_Site;
-use GDO\Type\GDT_Checkbox;
+use GDO\DB\GDT_Checkbox;
 use GDO\Mail\Mail;
 use GDO\UI\GDT_Link;
 final class LinkSite extends MethodForm
@@ -63,7 +63,7 @@ final class LinkSite extends MethodForm
         return $this->onLink($user, $site, $onsitename);
     }
     
-    public function sendMail(GDO_User $user, WC_Site $site, string $onsitename, string $onsitemail, int $hidden)
+    public function sendMail(GDO_User $user, WC_Site $site, $onsitename, $onsitemail, $hidden)
     {
         $sitename = $this->getSiteName();
         $siteName = $site->displayName();
@@ -82,7 +82,7 @@ final class LinkSite extends MethodForm
         return $this->message('msg_wc_link_site_mail');
     }
     
-    public function onLinkAfterMail(string $onsitename, int $siteid, int $hidden, string $token)
+    public function onLinkAfterMail($onsitename, $siteid, $hidden, $token)
     {
         if (!($site = WC_Site::getById($siteid)))
         {
@@ -97,7 +97,7 @@ final class LinkSite extends MethodForm
         return $this->onLink(GDO_User::current(), $site, $onsitename, $hidden);
     }
     
-    public function onLink(GDO_User $user, WC_Site $site, string $onsitename, $hidden)
+    public function onLink(GDO_User $user, WC_Site $site, $onsitename, $hidden)
     {
         if (WC_RegAt::getFor($user, $site))
         {

@@ -1,5 +1,5 @@
 <?php
-use GDO\Type\GDT_Checkbox;
+use GDO\DB\GDT_Checkbox;
 $field instanceof GDT_Checkbox;
 $val = $field->filterValue();
 ?>

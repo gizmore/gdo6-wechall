@@ -2,7 +2,7 @@
 namespace GDO\WeChall;
 use GDO\Net\HTTP;
 use GDO\Net\GDT_IP;
-use GDO\Type\GDT_Token;
+use GDO\DB\GDT_Token;
 
 $debug = GWF_DEBUG_EMAIL && GDT_IP::isLocal();
 define('WECHALL_DEBUG_SCORING', $debug); # set true to debug scoring events.
@@ -13,7 +13,7 @@ define('WECHALL_DEBUG_SCORING', $debug); # set true to debug scoring events.
  */
 final class WC_Update
 {
-    public static function getSiteBaseURL(WC_Site $site, string $field)
+    public static function getSiteBaseURL(WC_Site $site, $field)
     {
         if ($url = $site->getVar($field))
         {
@@ -25,7 +25,7 @@ final class WC_Update
         }
     }
     
-    public static function getSiteURL(WC_Site $site, string $field, string $onsitename, string $onsitemail='')
+    public static function getSiteURL(WC_Site $site, $field, $onsitename, $onsitemail='')
     {
         if ($url = self::getSiteBaseURL($site, $field))
         {
@@ -38,12 +38,12 @@ final class WC_Update
         }
     }
     
-    public static function getLinkToken(WC_Site $site, string $onsitename, int $hidden)
+    public static function getLinkToken(WC_Site $site, $onsitename, $hidden)
     {
         return GDT_Token::generate($site->getID().$onsitename.$hidden);
     }
     
-    public static function combinationExists(WC_Site $site, string $onsitename, $onsitemail)
+    public static function combinationExists(WC_Site $site, $onsitename, $onsitemail)
     {
         $url = self::getSiteURL($site, 'site_url_mail', $onsitename, $onsitemail);
 

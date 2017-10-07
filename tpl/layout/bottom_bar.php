@@ -1,6 +1,6 @@
 <?php
 use GDO\Perf\GDT_PerfBar;
-use GDO\Template\GDT_Template;
+use GDO\Core\GDT_Template;
 ?>
 <footer>
   <?= GDT_Template::php('WeChall', 'layout/bottom_menu.php'); ?>

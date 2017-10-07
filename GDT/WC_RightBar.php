@@ -1,6 +1,6 @@
 <?php
 namespace GDO\WeChall\GDT;
-use GDO\Template\GDT_Bar;
+use GDO\UI\GDT_Bar;
 use GDO\User\GDO_User;
 final class WC_RightBar extends GDT_Bar
 {

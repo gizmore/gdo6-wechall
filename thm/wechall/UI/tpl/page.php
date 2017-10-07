@@ -1,9 +1,9 @@
 <?php
 use GDO\Core\Website;
 use GDO\Util\Javascript;
-use GDO\Template\GDT_Bar;
+use GDO\UI\GDT_Bar;
 use GDO\GWF\Module_GWF;
-use GDO\Template\GDT_Template;
+use GDO\Core\GDT_Template;
 $page instanceof GDO\UI\GDT_Page;
 ?>
 <!DOCTYPE html>

@@ -1,6 +1,6 @@
 <?php
 namespace GDO\WeChall\GDT;
-use GDO\Type\GDT_String;
+use GDO\DB\GDT_String;
 
 final class WC_SiteName extends GDT_String
 {

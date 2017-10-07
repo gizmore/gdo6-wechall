@@ -1,6 +1,6 @@
 <?php
 namespace GDO\WeChall\Method;
-use GDO\GWF\MethodPage;
+use GDO\UI\MethodPage;
 final class Sites extends MethodPage
 {
 }

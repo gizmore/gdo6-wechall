@@ -5,7 +5,6 @@ use GDO\WeChall\WC_Site;
 use GDO\WeChall\WC_SiteAdmin;
 use GDO\Util\Common;
 use GDO\User\GDO_User;
-use GDO\User\GDT_User;
 use GDO\UI\GDT_Button;
 final class SiteAdmins extends MethodQueryTable
 {

@@ -1,5 +1,5 @@
 <?php
-use GDO\Type\GDT_String;
+use GDO\DB\GDT_String;
 $field instanceof GDT_String;
 ?>
 <div class="gdo-container<?= $field->classError(); ?>">

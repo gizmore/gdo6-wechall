@@ -5,12 +5,12 @@ use GDO\Core\GDO;
 use GDO\DB\GDT_AutoInc;
 use GDO\WeChall\GDT\WC_SiteStatus;
 use GDO\WeChall\GDT\WC_SiteName;
-use GDO\Type\GDT_Name;
+use GDO\DB\GDT_Name;
 use GDO\Language\GDT_Language;
 use GDO\Date\GDT_Date;
-use GDO\Type\GDT_Secret;
+use GDO\Core\GDT_Secret;
 use GDO\Net\GDT_Url;
-use GDO\Type\GDT_String;
+use GDO\DB\GDT_String;
 use GDO\Tag\WithTags;
 use GDO\DB\Cache;
 use GDO\DB\GDT_CreatedAt;
@@ -18,12 +18,12 @@ use GDO\File\GDT_File;
 use GDO\DB\GDT_CreatedBy;
 use GDO\DB\GDT_EditedAt;
 use GDO\DB\GDT_EditedBy;
-use GDO\Template\GDT_Template;
+use GDO\Core\GDT_Template;
 use GDO\DB\GDT_Join;
 use GDO\UI\GDT_Color;
-use GDO\Type\GDT_UInt;
-use GDO\Type\GDT_Decimal;
-use GDO\Type\GDT_Checkbox;
+use GDO\DB\GDT_UInt;
+use GDO\DB\GDT_Decimal;
+use GDO\DB\GDT_Checkbox;
 use GDO\WeChall\GDT\WC_SiteLogo;
 use GDO\User\GDO_User;
 use GDO\Tag\GDT_Tags;
@@ -95,7 +95,7 @@ final class WC_Site extends GDO
     public function displayName() { return html($this->getName()); }
     public function displayLogo() { return WC_SiteLogo::make()->gdo($this)->renderCell(); }
     public function getState() { return $this->getVar('site_status'); }
-    public function hasState(string $state) { return $this->getState() === $state; }
+    public function hasState($state) { return $this->getState() === $state; }
     public function isUp() { return $this->hasState('up'); }
     public function isSiteLinked(GDO_User $user) { return WC_RegAt::getFor($user, $this); }
         

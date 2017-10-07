@@ -2,8 +2,8 @@
 namespace GDO\WeChall;
 use GDO\Core\GDO;
 use GDO\DB\GDT_AutoInc;
-use GDO\Type\GDT_Name;
-use GDO\Type\GDT_Title;
+use GDO\DB\GDT_Name;
+use GDO\UI\GDT_Title;
 use GDO\Net\GDT_Url;
 use GDO\DB\GDT_Join;
 class WC_Challenge extends GDO

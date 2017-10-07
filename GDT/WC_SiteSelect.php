@@ -27,7 +27,7 @@ final class WC_SiteSelect extends GDT_ObjectSelect
     const LINKED = 1;
     const LINKABLE = 2;
     public $mode = self::ALL;
-    public function mode(int $mode) { $this->mode = $mode;  return $this; }
+    public function mode($mode) { $this->mode = $mode;  return $this; }
     public function onlyLinkable() { return $this->mode(self::LINKABLE); }
     
     public function initChoices()

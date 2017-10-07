@@ -4,10 +4,10 @@ use GDO\Core\GDO;
 use GDO\User\GDT_User;
 use GDO\DB\GDT_Object;
 use GDO\DB\GDT_CreatedAt;
-use GDO\Type\GDT_String;
-use GDO\Type\GDT_UInt;
-use GDO\Type\GDT_Checkbox;
-use GDO\Type\GDT_Decimal;
+use GDO\DB\GDT_String;
+use GDO\DB\GDT_UInt;
+use GDO\DB\GDT_Checkbox;
+use GDO\DB\GDT_Decimal;
 use GDO\User\GDO_User;
 use GDO\DB\GDT_EditedAt;
 /**
@@ -16,9 +16,9 @@ use GDO\DB\GDT_EditedAt;
  */
 final class WC_RegAt extends GDO
 {
-    public static function getForId(int $userid, int $siteid) { return self::getById($userid, $siteid); }
+    public static function getForId($userid, $siteid) { return self::getById($userid, $siteid); }
     public static function getFor(GDO_User $user, WC_Site $site) { return self::getById($user->getID(), $site->getID()); }
-    public static function getByOnsitename(WC_Site $site, string $onsitename) { return self::table()->select()->where("regat_site={$site->getID()} AND regat_onsitename=".GDO::quoteS($onsitename))->first()->exec()->fetchObject(); }
+    public static function getByOnsitename(WC_Site $site, $onsitename) { return self::table()->select()->where("regat_site={$site->getID()} AND regat_onsitename=".GDO::quoteS($onsitename))->first()->exec()->fetchObject(); }
     
     public function gdoColumns()
     {

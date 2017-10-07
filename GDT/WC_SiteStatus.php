@@ -1,6 +1,6 @@
 <?php
 namespace GDO\WeChall\GDT;
-use GDO\Form\GDT_Enum;
+use GDO\DB\GDT_Enum;
 
 final class WC_SiteStatus extends GDT_Enum
 {

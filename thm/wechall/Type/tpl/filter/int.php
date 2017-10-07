@@ -1,5 +1,5 @@
 <?php
-use GDO\Type\GDT_Int;
+use GDO\DB\GDT_Int;
 $field instanceof GDT_Int;
 ?>
 <input

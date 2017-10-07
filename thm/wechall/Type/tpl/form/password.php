@@ -1,4 +1,4 @@
-<?php use GDO\Type\GDT_Password; $field instanceof GDT_Password; ?>
+<?php use GDO\User\GDT_Password; $field instanceof GDT_Password; ?>
 <div class="gdo-container<?= $field->classError(); ?>">
   <?= $field->icon; ?>
   <label for="form[<?= $field->name; ?>]"><?= $field->label; ?></label>

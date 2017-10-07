@@ -1,6 +1,6 @@
 <?php
 namespace GDO\WeChall\Method;
-use GDO\GWF\MethodAjax;
+use GDO\Core\MethodAjax;
 use GDO\WeChall\WC_Site;
 use GDO\User\GDO_User;
 use GDO\Core\GDO;
@@ -29,7 +29,7 @@ final class WCAPIMail extends MethodAjax
         die('0');
     }
     
-    public function checkAuthKey(string $authkey)
+    public function checkAuthKey($authkey)
     {
         return WC_Site::getWeChall()->getVar('site_authkey') === $authkey;
     }
