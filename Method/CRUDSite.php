@@ -7,6 +7,7 @@ use GDO\User\GDO_User;
 use function foo\func;
 use GDO\UI\GDT_Bar;
 use GDO\UI\GDT_Link;
+use GDO\Core\GDT_Response;
 
 final class CRUDSite extends MethodCrud
 {
@@ -26,11 +27,12 @@ final class CRUDSite extends MethodCrud
     
     public function execute()
     {
-        return parent::execute()->pre($this->renderBar());
+    	return $this->renderBar()->add(parent::execute());
     }
 
     public function renderBar()
     {
+    	$response = GDT_Response::make();
         if ($this->gdo)
         {
             $bar = GDT_Bar::make();
@@ -38,8 +40,9 @@ final class CRUDSite extends MethodCrud
                 GDT_Link::make('wc_site_admins')->href($this->gdo->href_site_admins()),
                 GDT_Link::make('wc_site_descriptions')->href($this->gdo->href_site_descriptions()),
             ));
-            return $bar->render();
+            $response->addField($bar);
         }
+        return $response;
     }
     
     

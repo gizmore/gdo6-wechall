@@ -9,7 +9,7 @@ use GDO\UI\GDT_EditButton;
 $sites = WC_Site::table();
 
 $table = GDT_Table::make();
-$table->addFields(array(
+$table->addHeaders(array(
     $sites->gdoColumn('site_id'),
     GDT_EditButton::make('edit_site'),
     $sites->gdoColumn('site_country'),

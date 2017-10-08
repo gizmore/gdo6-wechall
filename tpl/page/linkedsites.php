@@ -18,7 +18,7 @@ echo GDT_Button::make('menu_link_site')->href(href('WeChall', 'LinkSite'));
 $sites = WC_Site::table();
 $regats = WC_RegAt::table();
 $table = GDT_Table::make();
-$table->addFields(array(
+$table->addHeaders(array(
     $sites->gdoColumn('site_name'),
     $regats->gdoColumn('regat_challsolved'),
     $sites->gdoColumn('site_challcount'),

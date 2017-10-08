@@ -56,7 +56,7 @@ final class WC_Site extends GDO
         
             GDT_Country::make('site_country')->emptyLabel(t('choose_site_country')),
             GDT_Language::make('site_language')->notNull()->initial('en'),
-            GDT_Tags::make('site_tags'),
+            GDT_Tags::make('site_tags')->tagtable(WC_SiteTag::table()),
             
             GDT_Date::make('site_launchdate'),
             GDT_Date::make('site_joindate')->editable(false),
