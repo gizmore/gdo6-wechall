@@ -27,6 +27,7 @@ use GDO\DB\GDT_Checkbox;
 use GDO\WeChall\GDT\WC_SiteLogo;
 use GDO\User\GDO_User;
 use GDO\Tag\GDT_Tags;
+use GDO\File\GDT_ImageFile;
 final class WC_Site extends GDO
 {
     ############
@@ -52,7 +53,7 @@ final class WC_Site extends GDO
             GDT_Name::make('site_classname')->notNull()->unique()->label('classname'),
             
             GDT_Color::make('site_color')->notNull(),
-            GDT_File::make('site_logo')->imageFile()->label('logo'),
+            GDT_ImageFile::make('site_logo')->label('logo'),
         
             GDT_Country::make('site_country')->emptyLabel(t('choose_site_country')),
             GDT_Language::make('site_language')->notNull()->initial('en'),
