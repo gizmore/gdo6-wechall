@@ -10,5 +10,5 @@
    max="<?= $field->max; ?>"
    step="<?= $field->step; ?>"
    value="<?= $field->getVar(); ?>" />
-  <div class="gdo-form-error"><?= $field->error; ?></div>
+  <?= $field->htmlError(); ?>
 </div>
