@@ -18,7 +18,7 @@ use GDO\Util\Javascript;
     <?= GDT_Template::php('WeChall', 'layout/top_menu.php'); ?>
 	<div class="gdo-body">
 	  <div class="gdo-main"><?= $page->html; ?></div>
-      <?= GDT_Template::php('WeChall', 'layout/side_bar.php'); ?>
+	  <div class="gdo-right-bar"><?= GDT_Template::php('WeChall', 'layout/side_bar.php'); ?></div>
 	</div>
     <?= GDT_Template::php('WeChall', 'layout/bottom_bar.php'); ?>
     <?= Javascript::displayJavascripts(Module_Core::instance()->cfgMinifyJS() === 'concat'); ?>
