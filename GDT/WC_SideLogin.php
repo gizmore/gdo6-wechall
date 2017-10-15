@@ -11,5 +11,6 @@ final class WC_SideLogin extends GDT_Form
     public function __construct()
     {
         $this->addFields(Form::make()->getForm()->getFields());
+        $this->action(href('Login', 'Form'));
     }
 }
