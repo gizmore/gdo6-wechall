@@ -4,5 +4,5 @@ use GDO\Core\GDT_Template;
 ?>
 <footer>
   <?= GDT_Template::php('WeChall', 'layout/bottom_menu.php'); ?>
-  <?= GDT_PerfBar::make(); ?>
+  <?= GDT_PerfBar::make()->render(); ?>
 </footer>
