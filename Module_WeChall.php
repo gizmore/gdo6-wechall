@@ -12,15 +12,20 @@ use GDO\UI\GDT_Link;
 final class Module_WeChall extends GDO_Module
 {
     public $module_priority = 96;
+    public function isSiteModule() { return true; }
     public function getThemes() { return ['wechall']; }
     public function onLoadLanguage() { $this->loadLanguage('lang/wechall'); }
-    public function defaultEnabled() { return false; }
-
+    
     public function getConfig()
     {
         return array(
             GDT_Level::make('site_vote_min_score')->initial('700'), # thx awe
         );
+    }
+    
+    public function getDependencies()
+    {
+    	return ['News', 'Forum', 'Download', 'Links', 'Shoutbox', 'Usergroup', 'Tag', 'Vote', 'PM', 'Mibbit'];
     }
     
     public function getClasses()
