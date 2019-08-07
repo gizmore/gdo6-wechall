@@ -3,7 +3,7 @@ return array(
 # General
 
 # LinkSite
-'ft_wechall_linksite' => '[%s] Link a Site',
+'ft_wechall_linksite' => 'Link a Site',
 'mail_subj_wc_link' => '[%s] Link %s Account',
 'mail_body_wc_link' =>'
 Hello %2$s.
