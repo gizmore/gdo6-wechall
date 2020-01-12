@@ -55,7 +55,7 @@ final class WC_Site extends GDO
             GDT_Color::make('site_color')->notNull(),
             GDT_ImageFile::make('site_logo')->label('logo'),
         
-            GDT_Country::make('site_country')->emptyLabel(t('choose_site_country')),
+            GDT_Country::make('site_country')->emptyLabel('choose_site_country'),
             GDT_Language::make('site_language')->notNull()->initial('en'),
             GDT_Tags::make('site_tags')->tagtable(WC_SiteTag::table()),
             
