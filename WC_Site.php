@@ -125,6 +125,10 @@ final class WC_Site extends GDO
             $cache = parent::all();
             Cache::set('wc_all_sites', $cache);
         }
+        else
+        {
+            Cache::heat('wc_all_sites', $cache);
+        }
         return $cache;
     }
     
