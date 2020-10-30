@@ -6,6 +6,6 @@ final class WC_SiteLogo extends GDT_Icon
 {
     public function solved($solved=10000)
     {
-        return $this->size(Math::clamp($solved*16/10000, 3, 16));
+        return $this->iconSize(Math::clamp($solved*16/10000, 3, 16));
     }
 }
