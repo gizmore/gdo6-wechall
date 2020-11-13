@@ -14,7 +14,7 @@ final class Module_WeChall extends GDO_Module
 	public $module_license = 'WPL';
     public $module_priority = 96;
     public function isSiteModule() { return true; }
-    public function getThemes() { return ['wechall']; }
+    public function getTheme() { return 'wechall'; }
     public function onLoadLanguage() { $this->loadLanguage('lang/wechall'); }
     
     public function getConfig()
