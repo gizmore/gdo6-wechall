@@ -1,13 +1,16 @@
 <?php
 namespace GDO\WeChall;
+
 use GDO\Core\GDO_Module;
 use GDO\User\GDT_Level;
-use GDO\UI\GDT_Bar;
 use GDO\UI\GDT_Link;
+use GDO\UI\GDT_Page;
+
 /**
  * GDO6 port of the wechall.net website
  * @author gizmore
- * @version 6.0.2
+ * @version 6.01
+ * @since 6.00
  */
 final class Module_WeChall extends GDO_Module
 {
@@ -19,9 +22,9 @@ final class Module_WeChall extends GDO_Module
     
     public function getConfig()
     {
-        return array(
+        return [
             GDT_Level::make('site_vote_min_score')->initial('700'), # thx awe
-        );
+        ];
     }
     
     public function getDependencies()
@@ -31,28 +34,28 @@ final class Module_WeChall extends GDO_Module
     
     public function getClasses()
     {
-        return array(
-            'GDO\\WeChall\\WC_Challenge',
-            'GDO\\WeChall\\WC_ChallDiff',
-            'GDO\\WeChall\\WC_ChallDiffVote',
-            'GDO\\WeChall\\WC_Site',
-            'GDO\\WeChall\\WC_SiteTag',
-            'GDO\\WeChall\\WC_SiteDiff',
-            'GDO\\WeChall\\WC_SiteDiffVote',
-            'GDO\\WeChall\\WC_SiteAdmin',
-            'GDO\\WeChall\\WC_RegAt',
-        );
+        return [
+            WC_Challenge::class,
+            WC_ChallDiff::class,
+            WC_ChallDiffVote::class,
+            WC_Site::class,
+            WC_SiteTag::class,
+            WC_SiteDiff::class,
+            WC_SiteDiffVote::class,
+            WC_SiteAdmin::class,
+            WC_RegAt::class,
+        ];
     }
     
     #############
     ### Hooks ###
     #############
-    public function hookLeftBar(GDT_Bar $bar)
+    public function onInitSidebar()
     {
+        $bar = GDT_Page::$INSTANCE->leftNav;
         $bar->addField(GDT_Link::make('menu_sites')->href(href('WeChall', 'Sites')));
-    }
-    public function hookRightBar(GDT_Bar $bar)
-    {
+        $bar = GDT_Page::$INSTANCE->rightNav;
         $bar->addField(GDT_Link::make('menu_linked_sites')->href(href('WeChall', 'LinkedSites')));
     }
+
 }
