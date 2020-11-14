@@ -1,11 +1,13 @@
 <?php
 namespace GDO\WeChall\Method;
+
 use GDO\Table\MethodQueryTable;
 use GDO\WeChall\WC_Site;
 use GDO\WeChall\WC_SiteAdmin;
 use GDO\Util\Common;
 use GDO\User\GDO_User;
 use GDO\UI\GDT_Button;
+
 final class SiteAdmins extends MethodQueryTable
 {
     /**
@@ -15,10 +17,9 @@ final class SiteAdmins extends MethodQueryTable
     
     public function isGuestAllowed() { return false; }
     
-    public function execute()
+    public function gdoTable()
     {
-        $this->site = WC_Site::table()->find(Common::getGetInt('id'));
-        return parent::execute();
+        return GDO_User::table();
     }
     
     public function getQuery()
@@ -29,9 +30,9 @@ final class SiteAdmins extends MethodQueryTable
         return $query->where("sitemin_site={$this->site->getID()}");
     }
     
-    public function getHeaders()
+    public function gdoHeaders()
     {
-        $users = GDO_User::table();
+//         $users = GDO_User::table();
         $sitem = WC_SiteAdmin::table();
         return array(
             $sitem->gdoColumn('sitemin_user'),
@@ -40,7 +41,11 @@ final class SiteAdmins extends MethodQueryTable
             GDT_Button::make('sitemin_delete'),
         );
     }
-
-
+    
+    public function execute()
+    {
+        $this->site = WC_Site::table()->find(Common::getGetInt('id'));
+        return parent::execute();
+    }
     
 }

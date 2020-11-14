@@ -45,7 +45,7 @@ final class WC_TopMenu extends GDT_Bar
         if ($user->isAuthenticated())
         {
             $this->addField(GDT_Link::make('menu_logout')->href(href('Login', 'Logout')));
-            $this->addField(GDT_Link::make()->href(href('Profile', 'Show', '&user='.$user->getID()))->rawLabel("[{$user->displayNameLabel()}]"));
+            $this->addField(GDT_Link::make()->href(href('Profile', 'Show', '&user='.$user->getID()))->labelRaw("[{$user->displayNameLabel()}]"));
             
             
             
