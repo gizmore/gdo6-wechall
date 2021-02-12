@@ -1,5 +1,6 @@
 <?php
 namespace GDO\WeChall;
+
 use GDO\Country\GDT_Country;
 use GDO\Core\GDO;
 use GDO\DB\GDT_AutoInc;
@@ -12,9 +13,7 @@ use GDO\Core\GDT_Secret;
 use GDO\Net\GDT_Url;
 use GDO\DB\GDT_String;
 use GDO\Tag\WithTags;
-use GDO\DB\Cache;
 use GDO\DB\GDT_CreatedAt;
-use GDO\File\GDT_File;
 use GDO\DB\GDT_CreatedBy;
 use GDO\DB\GDT_EditedAt;
 use GDO\DB\GDT_EditedBy;
@@ -28,6 +27,7 @@ use GDO\WeChall\GDT\WC_SiteLogo;
 use GDO\User\GDO_User;
 use GDO\Tag\GDT_Tags;
 use GDO\File\GDT_ImageFile;
+
 final class WC_Site extends GDO
 {
     ############
@@ -114,23 +114,5 @@ final class WC_Site extends GDO
     {
         
     }
-    
-    #############
-    ### Cache ###
-    #############
-    public function all()
-    {
-        if (false === ($cache = Cache::get('wc_all_sites')))
-        {
-            $cache = parent::all();
-            Cache::set('wc_all_sites', $cache);
-        }
-        else
-        {
-            Cache::heat('wc_all_sites', $cache);
-        }
-        return $cache;
-    }
-    
     
 }
