@@ -38,7 +38,8 @@ echo $table;
 # Update all
 $form = GDT_Form::make();
 $form->addFields(array(
-    GDT_Submit::make()->label('btn_update_all_sites'),
     GDT_AntiCSRF::make(),
 ));
+$form->actions()->addField(GDT_Submit::make()->label('btn_update_all_sites'));
+
 echo $form;

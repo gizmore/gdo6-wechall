@@ -36,9 +36,9 @@ final class LinkSite extends MethodForm
             GDT_String::make('regat_onsitename')->max(64)->initial($user->getName()),
             GDT_Email::make('onsitemail')->initial($user->getMail()),
             GDT_Checkbox::make('regat_hidename')->initial('0'),
-            GDT_Submit::make(),
             GDT_AntiCSRF::make(),
         ));
+        $form->actions()->addField(GDT_Submit::make());
     }
     
     public function formValidated(GDT_Form $form)
