@@ -3,6 +3,7 @@ use GDO\Core\GDT_Template;
 use GDO\Core\Module_Core;
 use GDO\Core\Website;
 use GDO\Util\Javascript;
+use GDO\Javascript\Module_Javascript;
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,6 +22,6 @@ use GDO\Util\Javascript;
 	  <div class="gdo-right-bar"><?= GDT_Template::php('WeChall', 'layout/side_bar.php'); ?></div>
 	</div>
     <?= GDT_Template::php('WeChall', 'layout/bottom_bar.php'); ?>
-    <?= Javascript::displayJavascripts(Module_Core::instance()->cfgMinifyJS() === 'concat'); ?>
+    <?= Javascript::displayJavascripts(Module_Javascript::instance()->cfgMinifyJS() === 'concat'); ?>
   </body>
 </html>
