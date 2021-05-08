@@ -11,7 +11,7 @@ final class LinkedSites extends MethodPage
     {
         if (isset($_GET['update']))
         {
-            return $this->onUpdate(Common::getGetString('site'))->add(parent::execute());
+            return $this->onUpdate(Common::getGetString('site'))->addField(parent::execute());
         }
         return parent::execute();
     }

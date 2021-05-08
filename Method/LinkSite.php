@@ -52,7 +52,7 @@ final class LinkSite extends MethodForm
         /** @var $site \GDO\WeChall\WC_Site **/
         if (!WC_Update::combinationExists($site, $onsitename, $onsitemail))
         {
-            return $this->error('err_combination_unknown', [$site->displayName()])->add($this->renderPage());
+            return $this->error('err_combination_unknown', [$site->displayName()])->addField($this->renderPage());
         }
         
         if ($user->getMail() !== $onsitemail)
@@ -86,12 +86,12 @@ final class LinkSite extends MethodForm
     {
         if (!($site = WC_Site::getById($siteid)))
         {
-            return $this->error('err_site')->add($this->renderPage());
+            return $this->error('err_site')->addField($this->renderPage());
         }
         
         if ($token !== WC_Update::getLinkToken($site, $onsitename, $hidden))
         {
-            return $this->error('err_token')->add($this->renderPage());
+            return $this->error('err_token')->addField($this->renderPage());
         }
         
         return $this->onLink(GDO_User::current(), $site, $onsitename, $hidden);
@@ -101,12 +101,12 @@ final class LinkSite extends MethodForm
     {
         if (WC_RegAt::getFor($user, $site))
         {
-            return $this->error('err_already_linked', [$site->displayName()])->add($this->renderPage());
+            return $this->error('err_already_linked', [$site->displayName()])->addField($this->renderPage());
         }
         
         if (WC_RegAt::getByOnsitename($site, $onsitename))
         {
-            return $this->error('err_onsitename_taken', [html($onsitename), $site->displayName()])->add($this->renderPage());
+            return $this->error('err_onsitename_taken', [html($onsitename), $site->displayName()])->addField($this->renderPage());
         }
         
         $linkA = GDT_Link::anchor(href('WeChall', 'LinkedSites', "&update={$site->getID()}"), t('update_this_site'))->renderCell();

@@ -27,7 +27,7 @@ final class CRUDSite extends MethodCrud
     
     public function execute()
     {
-    	return $this->renderBar()->add(parent::execute());
+    	return $this->renderBar()->addField(parent::execute());
     }
 
     public function renderBar()
