@@ -4,7 +4,7 @@ use GDO\Net\HTTP;
 use GDO\Net\GDT_IP;
 use GDO\DB\GDT_Token;
 
-$debug = GWF_DEBUG_EMAIL && GDT_IP::isLocal();
+$debug = GDO_DEBUG_EMAIL && GDT_IP::isLocal();
 define('WECHALL_DEBUG_SCORING', $debug); # set true to debug scoring events.
 
 /**

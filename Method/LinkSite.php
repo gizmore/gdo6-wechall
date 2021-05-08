@@ -76,7 +76,7 @@ final class LinkSite extends MethodForm
         $mail->setReceiver($onsitemail);
         $mail->setReceiverName($onsitename);
         $mail->setSubject(t('mail_subj_wc_link', [$sitename, $siteName]));
-        $mail->setBody(t('mail_body_wc_link', [$sitename, $onsitename, $siteName, $link, GWF_ADMIN_EMAIL]));
+        $mail->setBody(t('mail_body_wc_link', [$sitename, $onsitename, $siteName, $link, GDO_ADMIN_EMAIL]));
         $mail->sendAsText();
         
         return $this->message('msg_wc_link_site_mail');
