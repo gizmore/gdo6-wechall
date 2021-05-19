@@ -29,7 +29,12 @@ final class Module_WeChall extends GDO_Module
     
     public function getDependencies()
     {
-    	return ['News', 'Forum', 'Download', 'Links', 'Shoutbox', 'Usergroup', 'Tag', 'Vote', 'PM', 'Mibbit'];
+    	return [
+    	    'News', 'Forum', 'Download', 'Links',
+    	    'Shoutbox', 'Usergroup', 'Tag', 'Vote',
+    	    'PM', 'Mibbit', 'Classic', 'Login', 'Register',
+    	    'Admin',
+    	];
     }
     
     public function getClasses()

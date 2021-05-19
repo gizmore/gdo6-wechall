@@ -15,7 +15,7 @@ class WC_Challenge extends GDO
             GDT_Name::make('chall_name'),
             GDT_Title::make('chall_title'),
             GDT_Url::make('chall_url'),
-            GDT_Join::make('chall_diff')->join('wc_challdiff cd ON cd.challdiff_chall = chall_id'),
+            GDT_Join::make('chall_diff')->joinRaw('wc_challdiff cd ON cd.challdiff_chall = chall_id'),
         );
     }
     

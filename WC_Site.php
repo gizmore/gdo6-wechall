@@ -87,7 +87,7 @@ final class WC_Site extends GDO
             GDT_CreatedAt::make('site_created_at'),
             GDT_CreatedBy::make('site_created_by'),
             
-            GDT_Join::make('site_diff')->join("wc_sitediff ON sitediff_site = site_id"),
+            GDT_Join::make('site_diff')->joinRaw("wc_sitediff ON sitediff_site = site_id"),
         );
     }
     
