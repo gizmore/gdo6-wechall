@@ -2,7 +2,7 @@
 use GDO\Core\GDT_Template;
 use GDO\Core\Module_Core;
 use GDO\Core\Website;
-use GDO\Util\Javascript;
+use GDO\Javascript\Javascript;
 use GDO\Javascript\Module_Javascript;
 ?>
 <!DOCTYPE html>
