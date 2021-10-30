@@ -9,8 +9,8 @@ use GDO\UI\GDT_Page;
 /**
  * GDO6 port of the wechall.net website
  * @author gizmore
- * @version 6.01
- * @since 6.00
+ * @version 6.10.6
+ * @since 6.0.0
  */
 final class Module_WeChall extends GDO_Module
 {

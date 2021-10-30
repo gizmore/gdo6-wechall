@@ -1,8 +1,9 @@
-WPL License
+WPL
 
-Copyright (c) 2008-2020 gizmore@wechall.net
+Copyright (c) 2008-2022 gizmore@wechall.net
 
 WeChall Public License
+
 General
 This document describes Agreements and Licensing of the site WeChall, which may be further titled as the site. Also you will find the Terms of Use and some notes about your Privacy on this page.
 Sourcecode license
@@ -12,36 +13,46 @@ It is openly viewable to everyone here (changelog) and may be reused in parts, b
 You may not start a similar site with parts of the WeChall code.
 We reserve the right to change the license or the provided source anytime, without notice anybody, also we may decide to exclude certain files from the sourcecode publishment.
 The sourcecode comes as is, and may harm your computer, try it out on your own risk.
+
 Purpose
+
 The purpose of WeChall is creating a global challenge site ranking, for multiple challenge sites at once.
 Terms of Use
 By registering with WeChall, you agree to this document.
 Currently this document may change at anytime.
 After registering you are allowed to use further services of the site.
 You are not allowed to abuse any service on the site.
+
 You may not do any of the following list, which is not complete:
-Flood or Spam any site interacting with the site, or WeChall itself.
-Harassment or Insulting of the WeChall users.
-Cheating, for example link accounts from other challenge sites, which are not yours.
-Spoil WeChall Challenges: You are not allowed to post solutions or walkthroughs for our challenges. However you can discuss solutions to WeChall challenges in a special solution board. You are also not allowed to copy the challenges without permission. It is also not allowed to trade or post solutions of other sites here as well.
-Spoil other Challenges: you are not allowed to spoil or discuss other challenge sites challenges here, unless there is a special forum for the site, or otherwise noted.
+ - Flood or Spam any site interacting with the site, or WeChall itself.
+ - Harassment or Insulting of the WeChall users.
+ - Cheating, for example link accounts from other challenge sites, which are not yours.
+ - Spoil WeChall Challenges: You are not allowed to post solutions or walkthroughs for our challenges. However you can discuss solutions to WeChall challenges in a special solution board. You are also not allowed to copy the challenges without permission. It is also not allowed to trade or post solutions of other sites here as well.
+ - Spoil other Challenges: you are not allowed to spoil or discuss other challenge sites challenges here, unless there is a special forum for the site, or otherwise noted.
+
 Privacy Terms
+
 EMail privacy
 We will not give away your emails to another organisation or company.
+
 Password privacy
 Your password is stored as an obfuscated and salted SHA1 hash, and is censored in the WeChall logs.
 Though we don't know the plaintext of your password, in theory it would be possible to crack the hashes if someone gained access to the database and the secret salt.
 Thus we encourage you to not use your WeChall password on another site, and choose a password that is strong enough to not get cracked.
+
 Private Messages (PM)
 Private messages currently occur in the logs, and thus can be read by administrators of this site.
 If you need to send really private stuff to some member, we suggest to use another way of communication.
+
 Linked Content
 WeChall is not responsible for any content that is linked within the site.
 Extended Privacy Explaination
+
 Data Collection
 We log every request and data you send.
 We log your IP adresses and every request data, on every request, except password data.
 The log files are occasionally copied by the admins to their local machines.
 We *DO NOT* cooperate with anyone else. We do not sell any data, and we generally try to protect you.
+
 Cookie Storage
 We store a cookie or two to be able to provide our services.
