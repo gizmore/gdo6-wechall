@@ -1,9 +1,10 @@
 <?php
 namespace GDO\WeChall\GDT;
+
 use GDO\DB\GDT_ObjectSelect;
 use GDO\WeChall\WC_Site;
-use GDO\DB\ArrayResult;
 use GDO\User\GDO_User;
+
 /**
  * Site select.
  * @author gizmore
@@ -12,6 +13,7 @@ final class WC_SiteSelect extends GDT_ObjectSelect
 {
     public function __construct()
     {
+    	parent::__construct();
         $this->table(WC_Site::table());
     }
     

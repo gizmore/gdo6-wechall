@@ -1,5 +1,6 @@
 <?php
 namespace GDO\WeChall;
+
 use GDO\Core\GDO;
 use GDO\User\GDT_User;
 use GDO\DB\GDT_Object;
@@ -10,8 +11,10 @@ use GDO\DB\GDT_Checkbox;
 use GDO\DB\GDT_Decimal;
 use GDO\User\GDO_User;
 use GDO\DB\GDT_EditedAt;
+
 /**
  * User registered at a site.
+ * 
  * @author gizmore
  */
 final class WC_RegAt extends GDO
@@ -22,7 +25,7 @@ final class WC_RegAt extends GDO
     
     public function gdoColumns()
     {
-        return array(
+        return [
             GDT_User::make('regat_user')->primary(),
             GDT_Object::make('regat_site')->table(WC_Site::table())->primary(),
             
@@ -38,9 +41,9 @@ final class WC_RegAt extends GDO
             
             GDT_EditedAt::make('regat_lastdate'),
             GDT_CreatedAt::make('regat_linkdate'),
-        );
+        ];
     }
     
-    public function isNicknameHidden() { return $this->getValue('regat_hidename'); }
+    public function isNicknameHidden() { return $this->getVar('regat_hidename'); }
     
 }

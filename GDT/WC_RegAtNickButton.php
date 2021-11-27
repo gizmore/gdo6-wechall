@@ -3,7 +3,9 @@ namespace GDO\WeChall\GDT;
 use GDO\UI\GDT_Button;
 use GDO\WeChall\WC_RegAt;
 /**
- * Show one or the other button depending on state.
+ * Show one or the other button and label, depending on state.
+ * Either hide nickname on regat site or not.
+ * 
  * @author gizmore
  */
 final class WC_RegAtNickButton extends GDT_Button
@@ -28,4 +30,5 @@ final class WC_RegAtNickButton extends GDT_Button
         }
         return parent::renderCell();
     }
+    
 }
