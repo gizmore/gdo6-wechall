@@ -17,10 +17,10 @@ final class WCAPIMail extends MethodAjax
 {
     public function execute()
     {
-        if ($this->checkAuthKey(Common::getGetString('authkey')))
+        if ($this->checkAuthKey(Common::getRequestString('authkey')))
         {
-            $onsitename = GDO::quoteS(Common::getGetString('user'));
-            $onsitemail = GDO::quoteS(Common::getGetString('email'));
+            $onsitename = GDO::quoteS(Common::getRequestString('user'));
+            $onsitemail = GDO::quoteS(Common::getRequestString('email'));
             if (GDO_User::table()->select('1')->where("user_name=$onsitename AND user_email=$onsitemail AND user_deleted_at IS NULL")->exec()->fetchValue())
             {
                 die('1');

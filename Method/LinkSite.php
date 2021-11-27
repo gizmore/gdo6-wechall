@@ -21,9 +21,9 @@ final class LinkSite extends MethodForm
     
     public function execute()
     {
-        if ($token = Common::getGetString('wcxlinkxtoken'))
+        if ($token = Common::getRequestString('wcxlinkxtoken'))
         {
-            return $this->onLinkAfterMail(Common::getGetString('onsitename'), Common::getGetInt('site'), Common::getGetInt('hidden'), $token);
+            return $this->onLinkAfterMail(Common::getRequestString('onsitename'), Common::getGetInt('site'), Common::getGetInt('hidden'), $token);
         }
         return parent::execute();
     }

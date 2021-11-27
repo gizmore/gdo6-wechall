@@ -9,9 +9,9 @@ final class LinkedSites extends MethodPage
 {
     public function execute()
     {
-        if (isset($_GET['update']))
+        if (isset($_REQUEST['update']))
         {
-            return $this->onUpdate(Common::getGetString('site'))->addField(parent::execute());
+            return $this->onUpdate(Common::getRequestString('site'))->addField(parent::execute());
         }
         return parent::execute();
     }
